@@ -58,9 +58,7 @@ const Navigation = () => {
               className="flex items-center gap-3 flex-shrink-0"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SL</span>
-              </div>
+              <img src="/logo_sarxlabs.png" alt="SARX LABS" className="w-10 h-10 rounded-lg" />
               <div className="hidden sm:block">
                 <h1 className="text-lg font-bold text-white">SARX LABS</h1>
                 <p className="text-xs text-blue-400">Technology Studio</p>
