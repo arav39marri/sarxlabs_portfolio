@@ -9,7 +9,7 @@ const testimonials = [
     name: 'Alex Chen',
     role: 'CTO, TechVenture',
     feedback:
-      'SARX Labs transformed our vision into reality. Their expertise in AI and cloud architecture is unmatched.',
+      'SarX LABS transformed our vision into reality. Their expertise in AI and cloud architecture is unmatched.',
     rating: 5,
     metric: 'Improved performance by 300%',
     image:
@@ -19,7 +19,7 @@ const testimonials = [
     name: 'Sarah Johnson',
     role: 'Product Manager, InnovateCo',
     feedback:
-      'Working with SARX Labs was a game-changer. They delivered on time, within budget, and exceeded expectations.',
+      'Working with SarX LABS was a game-changer. They delivered on time, within budget, and exceeded expectations.',
     rating: 5,
     metric: 'Reduced time-to-market by 50%',
     image:
@@ -29,7 +29,7 @@ const testimonials = [
     name: 'Michael Roberts',
     role: 'Founder, DataScale',
     feedback:
-      'The team at SARX Labs understands not just code, but business needs. Truly exceptional partners.',
+      'The team at SarX LABS understands not just code, but business needs. Truly exceptional partners.',
     rating: 5,
     metric: 'Achieved 99.99% uptime',
     image:
@@ -39,7 +39,7 @@ const testimonials = [
     name: 'Emily Watson',
     role: 'Director, GrowthFirst',
     feedback:
-      'SARX Labs brings innovation and technical excellence. Their solutions scale beautifully with our business.',
+      'SarX LABS brings innovation and technical excellence. Their solutions scale beautifully with our business.',
     rating: 5,
     metric: 'Scaled to 10M users',
     image:
@@ -59,7 +59,7 @@ const testimonials = [
     name: 'Jessica Williams',
     role: 'CEO, ModernTech',
     feedback:
-      'SARX Labs is the team to call for impossible deadlines and complex requirements. They deliver.',
+      'SarX LABS is the team to call for impossible deadlines and complex requirements. They deliver.',
     rating: 5,
     metric: 'Delivered in 6 weeks (vs 6 months planned)',
     image:

@@ -6,49 +6,82 @@ import { useInView } from 'framer-motion'
 
 const projects = [
   {
-    id: 1,
-    name: 'Neural Commerce',
-    category: 'AI',
-    techStack: ['React', 'Python', 'TensorFlow', 'Node.js'],
-    image: 'https://images.unsplash.com/photo-1460925895917-adf4e12482fe?w=500&h=300&fit=crop',
-    description: 'AI-powered e-commerce platform with intelligent product recommendations',
-    problem: 'Retailers struggled with low conversion rates and personalization at scale.',
-    solution: 'Built ML models analyzing user behavior for real-time product recommendations',
-    links: { demo: '#', github: '#' },
+    "id": 1,
+    "name": "quiz-hosting",
+    "category": "Web",
+    "techStack": ["JavaScript", "Node.js", "Express", "MongoDB"],
+    "image": "quiz_hosting.png",
+    "description": "Quiz hosting platform (fullstack repo with client & server).",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://quiz.sarxlabs.in", "github": "https://github.com/arav39marri/quiz-hostin" }
   },
   {
-    id: 2,
-    name: 'CloudSync Pro',
-    category: 'Web',
-    techStack: ['Next.js', 'AWS', 'TypeScript', 'PostgreSQL'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
-    description: 'Enterprise cloud synchronization platform for distributed teams',
-    problem: 'Teams needed seamless file sync across regions with strong security.',
-    solution: 'Developed multi-region cloud architecture with end-to-end encryption',
-    links: { demo: '#', github: '#' },
+    "id": 3,
+    "name": "chatbot",
+    "category": "AI",
+    "techStack": ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+    "image": "batugadu.png",
+    "description": "Chatbot project with front-end UI and Python backend.",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://batugadu.vercel.app", "github": "https://github.com/arav39marri/chatbot" }
   },
   {
-    id: 3,
-    name: 'MobileSync',
-    category: 'Mobile',
-    techStack: ['React Native', 'Firebase', 'Realm', 'Swift'],
-    image: 'https://images.unsplash.com/photo-1512941691920-25bda097d146?w=500&h=300&fit=crop',
-    description: 'Cross-platform mobile app for real-time data synchronization',
-    problem: 'Mobile teams needed offline-first sync with cloud backends.',
-    solution: 'Built native mobile apps with offline-first architecture and background sync',
-    links: { demo: '#', github: '#' },
+    "id": 4,
+    "name": "fileshare_client",
+    "category": "Web",
+    "techStack": ["JavaScript", "HTML", "CSS", "WebRTC"],
+    "image": "fileshare.png",
+    "description": "Client side of quick file sharing system.",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://quickfileshare.vercel.app", "github": "https://github.com/arav39marri/fileshare_client" }
   },
   {
-    id: 4,
-    name: 'AutoFlow Engine',
-    category: 'Automation',
-    techStack: ['Node.js', 'RabbitMQ', 'Python', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1454696462328-e2d88c3d8e91?w=500&h=300&fit=crop',
-    description: 'Workflow automation platform with visual builder',
-    problem: 'Businesses spent hours on repetitive tasks without automation tools.',
-    solution: 'Created no-code automation platform serving 500+ enterprise clients',
-    links: { demo: '#', github: '#' },
+    "id": 5,
+    "name": "CodeMate",
+    "category": "Automation",
+    "techStack": ["React", "JavaScript", "HTML", "CSS", "Monaco Editor"],
+    "image": "codemate.png",
+    "description": "React-based coding utility / playground app.",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://codematecompiler.vercel.app", "github": "https://github.com/arav39marri/CodeMate" }
   },
+  {
+    "id": 7,
+    "name": "BusTicket Booking",
+    "category": "Web",
+    "techStack": ["JavaScript", "WebRTC", "Node.js", "Socket.io"],
+    "image": "busticket.png",
+    "description": "Real-time communication app (WebRTC).",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://marggo.vercel.app", "github": "https://github.com/arav39marri/rtc-app" }
+  },
+  {
+    "id": 6,
+    "name": "codeforcestracker",
+    "category": "Web",
+    "techStack": ["JavaScript", "React", "API Integration"],
+    "image": "",
+    "description": "Codeforces contest tracker / stats dashboard.",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://codeforcestracker.vercel.app", "github": "https://github.com/arav39marri/codeforcestracker" }
+  },
+  {
+    "id": 2,
+    "name": "ip_checker",
+    "category": "Web",
+    "techStack": ["JavaScript", "HTML", "CSS", "API Integration"],
+    "image": "",
+    "description": "IP geolocation and lookup utility.",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://ip-checker-kappa.vercel.app", "github": "https://github.com/arav39marri/ip_checker" }
+  }
 ]
 
 const categories = ['All', 'Web', 'Mobile', 'AI', 'Automation']
@@ -58,7 +91,7 @@ function ProjectModal({ project, onClose }) {
     <AnimatePresence>
   {project && (
     <motion.div
-      className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-2"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -68,13 +101,13 @@ function ProjectModal({ project, onClose }) {
         className="
           relative                   
           bg-gray-900
-          rounded-2xl
+          rounded-xl
           w-full
           max-w-2xl
-          max-h-[90vh]                
+          max-h-[80vh]                
           no-scrollbar 
           overflow-y-auto            
-          p-6 sm:p-8                   
+          p-2 sm:p-4                   
           border border-gray-700
         "
         initial={{ scale: 0.85, opacity: 0 }}
@@ -85,13 +118,13 @@ function ProjectModal({ project, onClose }) {
         {/* Close Button */}
         <motion.button
           className="
-            sticky top-2             
+            sticky top-1            
             ml-auto
             block
             z-50
             text-gray-400
             hover:text-white
-            text-2xl
+            text-xl
           "
           onClick={onClose}
           whileHover={{ scale: 1.1 }}
@@ -102,7 +135,7 @@ function ProjectModal({ project, onClose }) {
         <img
           src={project.image || "/placeholder.svg"}
           alt={project.name}
-          className="w-full h-36 sm:h-64 object-cover rounded-xl mb-6"
+          className="w-full h-36 sm:h-64 object-cover rounded-xl mb-4"
         />
 
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
@@ -113,7 +146,7 @@ function ProjectModal({ project, onClose }) {
           {project.category}
         </p>
 
-        <div className="mb-6">
+        {/* <div className="mb-6">
           <h3 className="text-lg font-bold text-white mb-2">Problem</h3>
           <p className="text-gray-300 text-sm sm:text-base">
             {project.problem}
@@ -125,10 +158,10 @@ function ProjectModal({ project, onClose }) {
           <p className="text-gray-300 text-sm sm:text-base">
             {project.solution}
           </p>
-        </div>
+        </div> */}
 
         <div className="mb-6">
-          <h3 className="text-lg font-bold text-white mb-3">Tech Stack</h3>
+          {/* <h3 className="text-lg font-bold text-white mb-3">Tech Stack</h3> */}
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech) => (
               <span
@@ -146,17 +179,18 @@ function ProjectModal({ project, onClose }) {
             href={project.links.demo}
             className="flex-1 py-2 bg-red-600 text-white font-bold rounded-lg text-center hover:bg-red-700 transition"
             whileHover={{ scale: 1.05 }}
+            target="_blank"
           >
             Live Demo
           </motion.a>
 
-          <motion.a
+          {/* <motion.a
             href={project.links.github}
             className="flex-1 py-2 border-2 border-[#00bfff] text-[#00bfff] font-bold rounded-lg text-center hover:bg-[#00bfff] hover:text-black transition"
             whileHover={{ scale: 1.05 }}
           >
             GitHub
-          </motion.a>
+          </motion.a> */}
         </div>
       </motion.div>
     </motion.div>

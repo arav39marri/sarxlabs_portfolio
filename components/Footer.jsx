@@ -25,7 +25,7 @@ export default function Footer() {
     { icon: '🔗', label: 'LinkedIn', href: '#' },
     { icon: '🐙', label: 'GitHub', href: '#' },
     { icon: '𝕏', label: 'Twitter', href: '#' },
-    { icon: '📧', label: 'Email', href: 'mailto:hello@sarxlabs.com' },
+    { icon: '📧', label: 'Email', href: 'mailto:sarxlabs@gmail.com' },
   ]
 
   return (
@@ -42,8 +42,8 @@ export default function Footer() {
           {/* Brand */}
           <motion.div variants={itemVariants}>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo_sarxlabs.png" alt="SARX LABS" className="w-10 h-10 rounded-lg" />
-              <h3 className="text-2xl font-bold text-white">SARX LABS</h3>
+              <img src="/logo_sarxlabs.png" alt="SarX LABS" className="w-10 h-10 rounded-lg" />
+              <h3 className="text-2xl font-bold text-white">SarX LABS</h3>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Building tomorrow's technology today. Premium digital solutions for ambitious brands.
@@ -56,7 +56,7 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <motion.a
-                  href="#"
+                  // href="#"
                   className="hover:text-[#ff0000] transition-colors"
                   whileHover={{ x: 5 }}
                 >
@@ -65,7 +65,7 @@ export default function Footer() {
               </li>
               <li>
                 <motion.a
-                  href="#"
+                  // href="#"
                   className="hover:text-[#00bfff] transition-colors"
                   whileHover={{ x: 5 }}
                 >
@@ -74,7 +74,7 @@ export default function Footer() {
               </li>
               <li>
                 <motion.a
-                  href="#"
+                  // href="#"
                   className="hover:text-[#ff0000] transition-colors"
                   whileHover={{ x: 5 }}
                 >
@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li>
                 <motion.a
-                  href="#"
+                  // href="#"
                   className="hover:text-[#00bfff] transition-colors"
                   whileHover={{ x: 5 }}
                 >
@@ -99,7 +99,7 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <motion.a
-                  href="#"
+                  href="/about"
                   className="hover:text-[#ff0000] transition-colors"
                   whileHover={{ x: 5 }}
                 >
@@ -108,7 +108,7 @@ export default function Footer() {
               </li>
               <li>
                 <motion.a
-                  href="#"
+                  // href="#"
                   className="hover:text-[#00bfff] transition-colors"
                   whileHover={{ x: 5 }}
                 >
@@ -117,7 +117,7 @@ export default function Footer() {
               </li>
               <li>
                 <motion.a
-                  href="#"
+                  // href="#"
                   className="hover:text-[#ff0000] transition-colors"
                   whileHover={{ x: 5 }}
                 >
@@ -126,7 +126,7 @@ export default function Footer() {
               </li>
               <li>
                 <motion.a
-                  href="#"
+                  // href="#"
                   className="hover:text-[#00bfff] transition-colors"
                   whileHover={{ x: 5 }}
                 >
@@ -142,7 +142,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm mb-3">
               <span className="text-[#00bfff] font-semibold">Email</span>
               <br />
-              hello@sarxlabs.com
+             <a href="mailto:sarxlabs@gmail.com" className='cursor-pointer hover:text-[#00bfff] transition-colors'> sarxlabs@gmail.com</a>
             </p>
             <p className="text-gray-400 text-sm">
               <span className="text-[#ff0000] font-semibold">Response Time</span>
@@ -176,7 +176,7 @@ export default function Footer() {
           {/* Bottom Text */}
           <div className="text-center">
             <p className="text-gray-500 text-sm">
-              © {currentYear} SARX LABS. All rights reserved.
+              © {currentYear} SarX LABS. All rights reserved.
             </p>
             <div className="flex justify-center gap-6 text-gray-500 text-xs mt-4">
               <motion.a

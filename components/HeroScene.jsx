@@ -38,7 +38,7 @@ function Particles() {
 function AnimatedText() {
   return (
     <Text position={[0, 0, 0]} fontSize={1.5} color="#ff0000" anchorX="center">
-      {/* SARX LABS */}
+      {/* SarX LABS */}
       <meshStandardMaterial emissive="#ff0000" emissiveIntensity={0.5} />
     </Text>
   )

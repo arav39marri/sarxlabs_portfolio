@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'SARX LABS - Technology Studio',
+  title: 'SarX LABS - Technology Studio',
   description: 'Premium tech studio building web applications, mobile apps, AI solutions, and custom software',
   icons: {
     icon: [

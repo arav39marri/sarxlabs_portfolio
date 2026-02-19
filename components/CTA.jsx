@@ -197,7 +197,7 @@ export default function CTA() {
             <p className="text-gray-400 mb-4">
               Or reach out directly at{' '}
               <span className="text-[#00bfff] font-semibold">
-                hello@sarxlabs.com
+                sarxlabs@gmail.com
               </span>
             </p>
             <div className="flex justify-center gap-6">

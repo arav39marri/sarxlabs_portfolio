@@ -1,4 +1,4 @@
-# SARX LABS website
+# SarX LABS website
 
 ## Overview
 

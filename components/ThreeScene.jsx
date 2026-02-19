@@ -58,7 +58,7 @@ export default function ThreeScene() {
         function AnimatedText() {
           return (
             <Text position={[0, 0, 0]} fontSize={1.5} color="#ff0000" anchorX="center">
-              SARX LABS
+              SarX LABS
               <meshStandardMaterial emissive="#ff0000" emissiveIntensity={0.5} />
             </Text>
           )
@@ -123,7 +123,7 @@ export default function ThreeScene() {
           ctx.textAlign = 'center'
           ctx.textBaseline = 'middle'
           ctx.fillStyle = '#ff0000'
-          ctx.fillText('SARX LABS', canvas.width / 2, canvas.height / 2)
+          ctx.fillText('SarX LABS', canvas.width / 2, canvas.height / 2)
           
           rotation += 0.01
           requestAnimationFrame(animate)

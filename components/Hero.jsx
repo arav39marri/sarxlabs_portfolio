@@ -1,10 +1,11 @@
 'use client';
-
+import { useRouter, usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const router = useRouter()
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -43,7 +44,7 @@ export default function Hero() {
             ease: 'easeInOut',
           }}
         >
-          SARX LABS
+          SarX LABS
         </motion.h1>
 
         {/* Animated Tagline */}
@@ -77,6 +78,7 @@ export default function Hero() {
             className="px-8 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-colors glow-red"
             whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 0, 0, 0.8)' }}
             whileTap={{ scale: 0.95 }}
+             onClick={() => (router.push('/projects'))}
           >
             View Our Work
           </motion.button>
@@ -84,6 +86,7 @@ export default function Hero() {
             className="px-8 py-3 border-2 border-[#00bfff] text-[#00bfff] font-bold rounded-lg hover:bg-[#00bfff] hover:text-black transition-all glow-blue"
             whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 191, 255, 0.8)' }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => (router.push('/contact'))}
           >
             Contact Us
           </motion.button>

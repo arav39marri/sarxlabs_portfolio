@@ -1,16 +1,19 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Projects from '@/components/Projects'
-import TechStack from '@/components/TechStack'
+import About from '@/components/About'
 import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
 export default function Home() {
+  const searchParams = useSearchParams()
+
   useEffect(() => {
     // Smooth scrolling setup with reduced motion support
     const prefersReducedMotion = window.matchMedia(
@@ -18,15 +21,24 @@ export default function Home() {
     ).matches
 
     if (!prefersReducedMotion) {
-      // Optional: Add Lenis smooth scrolling here if desired
-      // For now, using native smooth scroll CSS
       document.documentElement.scrollBehavior = 'smooth'
+    }
+
+    // Scroll to specific section if hash is present
+    const section = searchParams.get('section')
+    if (section) {
+      setTimeout(() => {
+        const element = document.getElementById(section)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
     }
 
     return () => {
       document.documentElement.scrollBehavior = 'auto'
     }
-  }, [])
+  }, [searchParams])
 
   return (
     <div className="w-full bg-black overflow-x-hidden">
@@ -40,12 +52,12 @@ export default function Home() {
       <section id="projects">
         <Projects />
       </section>
-      <section id="tech-stack">
-        <TechStack />
-      </section>
       <section id="testimonials">
         <Testimonials />
       </section>
+       <section id="about">
+        <About show={false} />
+      </section> 
       <section id="cta">
         <CTA />
       </section>
