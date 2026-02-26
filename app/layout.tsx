@@ -34,6 +34,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`font-sans antialiased`} suppressHydrationWarning={true}>
         {children}
         <Analytics />
+         <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9098822825410735"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   )
