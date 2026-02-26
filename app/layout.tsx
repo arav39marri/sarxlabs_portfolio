@@ -1,14 +1,16 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import type { Metadata } from 'next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const _geist = Geist({ subsets: ["latin"] })
+const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: 'SarX LABS - Technology Studio',
-  description: 'Premium tech studio building web applications, mobile apps, AI solutions, and custom software',
+  description:
+    'Premium tech studio building web applications, mobile apps, AI solutions, and custom software',
   icons: {
     icon: [
       {
@@ -28,18 +30,28 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`} suppressHydrationWarning={true}>
+      <body
+        className={`font-sans antialiased`}
+        suppressHydrationWarning={true}
+      >
         {children}
-        <Analytics />
-         <Script
+
+        {/* Google AdSense Script - Load Once Globally */}
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9098822825410735"
           strategy="afterInteractive"
           crossOrigin="anonymous"
         />
+
+        <Analytics />
       </body>
     </html>
   )
