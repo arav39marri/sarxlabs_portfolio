@@ -9,7 +9,7 @@ export default function AboutPage() {
     <div className="w-full bg-black overflow-x-hidden">
       <Navigation />
       
-      <section className="min-h-screen py-20 px-4 md:px-8">
+      <section className="min-h-screen  px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
           <motion.div

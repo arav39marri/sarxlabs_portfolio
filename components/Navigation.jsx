@@ -16,7 +16,7 @@ const Navigation = () => {
     { id: 'services', label: 'Services', route: '/services' },
     { id: 'projects', label: 'Projects', route: '/projects' },
     // { id: 'tech-stack', label: 'Tech Stack', route: '/tech-stack' },
-    { id: 'testimonials', label: 'Testimonials', route: '/testimonials' },
+    // { id: 'testimonials', label: 'Testimonials', route: '/testimonials' },
     { id: 'about', label: 'About Us', route: '/about' },
     { id: 'cta', label: 'Contact', route: '/contact' }
   ]
@@ -168,7 +168,7 @@ const Navigation = () => {
       </motion.nav>
 
       {/* Spacer to prevent content overlap */}
-      <div className="h-20 sm:h-20" />
+      {/* <div className="h-20 sm:h-20" /> */}
     </>
   )
 }

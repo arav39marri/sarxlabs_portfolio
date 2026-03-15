@@ -29,7 +29,7 @@ const projects = [
   },
   {
     "id": 4,
-    "name": "fileshare_client",
+    "name": "fileshare",
     "category": "Web",
     "techStack": ["JavaScript", "HTML", "CSS", "WebRTC"],
     "image": "fileshare.png",
@@ -84,128 +84,11 @@ const projects = [
   }
 ]
 
-const categories = ['All', 'Web', 'Mobile', 'AI', 'Automation']
-
-function ProjectModal({ project, onClose }) {
-  return (
-    <AnimatePresence>
-  {project && (
-    <motion.div
-      className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-2"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onClick={onClose}
-    >
-      <motion.div
-        className="
-          relative                   
-          bg-gray-900
-          rounded-xl
-          w-full
-          max-w-2xl
-          max-h-[80vh]                
-          no-scrollbar 
-          overflow-y-auto            
-          p-2 sm:p-4                   
-          border border-gray-700
-        "
-        initial={{ scale: 0.85, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.85, opacity: 0 }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Close Button */}
-        <motion.button
-          className="
-            sticky top-1            
-            ml-auto
-            block
-            z-50
-            text-gray-400
-            hover:text-white
-            text-xl
-          "
-          onClick={onClose}
-          whileHover={{ scale: 1.1 }}
-        >
-          ✕
-        </motion.button>
-
-        <img
-          src={project.image || "/placeholder.svg"}
-          alt={project.name}
-          className="w-full h-36 sm:h-64 object-cover rounded-xl mb-4"
-        />
-
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-          {project.name}
-        </h2>
-
-        <p className="text-[#00bfff] font-semibold mb-4">
-          {project.category}
-        </p>
-
-        {/* <div className="mb-6">
-          <h3 className="text-lg font-bold text-white mb-2">Problem</h3>
-          <p className="text-gray-300 text-sm sm:text-base">
-            {project.problem}
-          </p>
-        </div>
-
-        <div className="mb-6">
-          <h3 className="text-lg font-bold text-white mb-2">Solution</h3>
-          <p className="text-gray-300 text-sm sm:text-base">
-            {project.solution}
-          </p>
-        </div> */}
-
-        <div className="mb-6">
-          {/* <h3 className="text-lg font-bold text-white mb-3">Tech Stack</h3> */}
-          <div className="flex flex-wrap gap-2">
-            {project.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 bg-gray-800 text-[#00bfff] rounded-full text-xs sm:text-sm border border-gray-700"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <motion.a
-            href={project.links.demo}
-            className="flex-1 py-2 bg-red-600 text-white font-bold rounded-lg text-center hover:bg-red-700 transition"
-            whileHover={{ scale: 1.05 }}
-            target="_blank"
-          >
-            Live Demo
-          </motion.a>
-
-          {/* <motion.a
-            href={project.links.github}
-            className="flex-1 py-2 border-2 border-[#00bfff] text-[#00bfff] font-bold rounded-lg text-center hover:bg-[#00bfff] hover:text-black transition"
-            whileHover={{ scale: 1.05 }}
-          >
-            GitHub
-          </motion.a> */}
-        </div>
-      </motion.div>
-    </motion.div>
-  )}
-</AnimatePresence>
-
-  )
-}
-
-function ProjectCard({ project, onSelect }) {
+function ProjectCard({ project }) {
   return (
     <motion.div
       className="flex-shrink-0 w-72 sm:w-80 md:w-80 lg:w-80 cursor-pointer group"
       whileHover={{ scale: 1.02 }}
-      onClick={() => onSelect(project)}
     >
       <div className="relative rounded-2xl overflow-hidden glassmorphism border border-gray-700 group-hover:border-[#ff0000] transition-all duration-300 h-full">
         <img
@@ -232,15 +115,17 @@ function ProjectCard({ project, onSelect }) {
             ))}
           </div>
 
-          <motion.div
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-          >
-            <p className="text-[#ff0000] font-semibold text-xs sm:text-sm">
-              Click to view details →
-            </p>
-          </motion.div>
+          <div className="flex justify-center">
+            <motion.a
+              href={project.links.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-red-600 text-white font-bold rounded-lg text-center hover:bg-red-700 transition text-sm"
+              whileHover={{ scale: 1.05 }}
+            >
+              Live Demo
+            </motion.a>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -248,15 +133,8 @@ function ProjectCard({ project, onSelect }) {
 }
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null)
-  const [activeCategory, setActiveCategory] = useState('All')
   const containerRef = useRef(null)
   const isInView = useInView(containerRef, { once: true })
-
-  const filteredProjects =
-    activeCategory === 'All'
-      ? projects
-      : projects.filter((p) => p.category === activeCategory)
 
   return (
     <section className="w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-black overflow-hidden relative">
@@ -276,30 +154,6 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div
-          className="flex gap-2 sm:gap-3 mb-6 sm:mb-8 overflow-x-auto pb-2 sm:pb-4"
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 sm:px-6 py-2 rounded-full font-semibold whitespace-nowrap transition-all duration-300 text-sm sm:text-base ${
-                activeCategory === category
-                  ? 'bg-red-600 text-white'
-                  : 'border border-gray-600 text-gray-300 hover:border-gray-400'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </motion.div>
-
         {/* Projects Carousel */}
         <div 
           className="overflow-x-auto pb-4 hide-scrollbar"
@@ -314,7 +168,7 @@ export default function Projects() {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {filteredProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, x: 100 }}
@@ -323,18 +177,12 @@ export default function Projects() {
               >
                 <ProjectCard
                   project={project}
-                  onSelect={setSelectedProject}
                 />
               </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
-
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
 
       {/* Background Glow */}
       <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-600 rounded-full blur-3xl opacity-5 pointer-events-none" />

@@ -132,7 +132,7 @@ export default function AboutPage({show = true}) {
           </motion.div>
 
           {/* Team Section */}
-          <motion.div
+          {/* <motion.div
             className="mb-20"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ export default function AboutPage({show = true}) {
                 </p>
               </motion.div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* CTA Section */}
           {show &&

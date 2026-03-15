@@ -22,9 +22,7 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { icon: '🔗', label: 'LinkedIn', href: '#' },
-    { icon: '🐙', label: 'GitHub', href: '#' },
-    { icon: '𝕏', label: 'Twitter', href: '#' },
+    { icon: 'insta.png', label: 'Instagram', href: 'https://www.instagram.com/sarx_labs/' },
     { icon: '📧', label: 'Email', href: 'mailto:sarxlabs@gmail.com' },
   ]
 
@@ -168,7 +166,11 @@ export default function Footer() {
                 whileTap={{ scale: 0.95 }}
                 title={link.label}
               >
-                {link.icon}
+                {link.icon === 'insta.png' ? (
+                  <img src="/insta.png" alt="Instagram" className="w-6 h-6" />
+                ) : (
+                  link.icon
+                )}
               </motion.a>
             ))}
           </div>

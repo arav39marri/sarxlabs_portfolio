@@ -60,9 +60,9 @@ function HomeContent() {
       <section id="projects">
         <Projects />
       </section>
-      <section id="testimonials">
+      {/* <section id="testimonials">
         <Testimonials />
-      </section>
+      </section> */}
        <section id="about">
         <About show={false} />
       </section> 
