@@ -5,41 +5,30 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'framer-motion'
 
 const projects = [
-  {
+    {
     "id": 1,
-    "name": "quiz-hosting",
+    "name": "trydevLabs",
     "category": "Web",
-    "techStack": ["JavaScript", "Node.js", "Express", "MongoDB"],
-    "image": "quiz_hosting.png",
-    "description": "Quiz hosting platform (fullstack repo with client & server).",
-    "problem": "",
-    "solution": "",
-    "links": { "demo": "https://quiz.sarxlabs.in", "github": "https://github.com/arav39marri/quiz-hostin" }
+    "techStack": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Docker",
+      "AWS Lambda"
+    ],
+    "image": "trydevs.png",
+    "description": "Developer-focused platform for coding practice, project showcase, and remote code execution.",
+    "problem": "Developers often lack an integrated platform that combines coding practice, project showcasing, and real-time code execution in one place.",
+    "solution": "Built a fullstack platform that allows users to practice coding, run code remotely using containerized execution environments, and showcase projects—leveraging AWS Lambda and Docker for scalable execution.",
+    "links": {
+      "demo": "https://trydev.vercel.app/",
+      "github": "https://github.com/arav39marri/trydev-final"
+    }
   },
   {
-    "id": 3,
-    "name": "chatbot",
-    "category": "AI",
-    "techStack": ["Python", "Flask", "JavaScript", "HTML", "CSS"],
-    "image": "batugadu.png",
-    "description": "Chatbot project with front-end UI and Python backend.",
-    "problem": "",
-    "solution": "",
-    "links": { "demo": "https://batugadu.vercel.app", "github": "https://github.com/arav39marri/chatbot" }
-  },
-  {
-    "id": 4,
-    "name": "fileshare",
-    "category": "Web",
-    "techStack": ["JavaScript", "HTML", "CSS", "WebRTC"],
-    "image": "fileshare.png",
-    "description": "Client side of quick file sharing system.",
-    "problem": "",
-    "solution": "",
-    "links": { "demo": "https://quickfileshare.vercel.app", "github": "https://github.com/arav39marri/fileshare_client" }
-  },
-  {
-    "id": 5,
+    "id": 2,
     "name": "CodeMate",
     "category": "Automation",
     "techStack": ["React", "JavaScript", "HTML", "CSS", "Monaco Editor"],
@@ -50,7 +39,29 @@ const projects = [
     "links": { "demo": "https://codematecompiler.vercel.app", "github": "https://github.com/arav39marri/CodeMate" }
   },
   {
-    "id": 7,
+    "id": 3,
+    "name": "quiz-hosting",
+    "category": "Web",
+    "techStack": ["JavaScript", "Node.js", "Express", "MongoDB"],
+    "image": "quiz_hosting.png",
+    "description": "Quiz hosting platform (fullstack repo with client & server).",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://quiz.sarxlabs.in", "github": "https://github.com/arav39marri/quiz-hostin" }
+  },
+  {
+    "id": 4,
+    "name": "fileshare",
+    "category": "Web",
+    "techStack": ["JavaScript", "HTML", "CSS", "WebRTC"],
+    "image": "livesharefile.png",
+    "description": "Client side of quick file sharing system.",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://livesharefile.vercel.app", "github": "https://github.com/arav39marri/fileshare_client" }
+  },
+  {
+    "id": 5,
     "name": "BusTicket Booking",
     "category": "Web",
     "techStack": ["JavaScript", "WebRTC", "Node.js", "Socket.io"],
@@ -62,26 +73,27 @@ const projects = [
   },
   {
     "id": 6,
+    "name": "chatbot",
+    "category": "AI",
+    "techStack": ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+    "image": "batugadu.png",
+    "description": "Chatbot project with front-end UI and Python backend.",
+    "problem": "",
+    "solution": "",
+    "links": { "demo": "https://batugadu.vercel.app", "github": "https://github.com/arav39marri/chatbot" }
+  },
+  {
+    "id": 7,
     "name": "codeforcestracker",
     "category": "Web",
     "techStack": ["JavaScript", "React", "API Integration"],
-    "image": "",
+    "image": "codeforcestracker.png",
     "description": "Codeforces contest tracker / stats dashboard.",
     "problem": "",
     "solution": "",
     "links": { "demo": "https://codeforcestracker.vercel.app", "github": "https://github.com/arav39marri/codeforcestracker" }
   },
-  {
-    "id": 2,
-    "name": "ip_checker",
-    "category": "Web",
-    "techStack": ["JavaScript", "HTML", "CSS", "API Integration"],
-    "image": "",
-    "description": "IP geolocation and lookup utility.",
-    "problem": "",
-    "solution": "",
-    "links": { "demo": "https://ip-checker-kappa.vercel.app", "github": "https://github.com/arav39marri/ip_checker" }
-  }
+  
 ]
 
 function ProjectCard({ project }) {
